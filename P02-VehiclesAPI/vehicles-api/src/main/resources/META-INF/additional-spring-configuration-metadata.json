@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "spring.mvc.pathmatch.matching-strategy",
+      "type": "java.lang.String",
+      "description": "Description for spring.mvc.pathmatch.matching-strategy."
+    },
+    {
+      "name": "pricing.endpoint",
+      "type": "java.lang.String",
+      "description": "Description for pricing.endpoint."
+    },
+    {
+      "name": "maps.endpoint",
+      "type": "java.lang.String",
+      "description": "Description for maps.endpoint."
+    }
+  ] }

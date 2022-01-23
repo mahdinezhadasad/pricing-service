@@ -1,23 +1,35 @@
 package com.udacity.vehicles.api;
 
 import com.udacity.vehicles.domain.car.Car;
-import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.ResourceAssembler;
+
 import org.springframework.stereotype.Component;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
-
-/**
- * Maps the CarController to the Car class using HATEOAS
- */
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.server.RepresentationModelAssembler;
+import org.springframework.stereotype.Component;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Component
-public class CarResourceAssembler implements ResourceAssembler<Car, Resource<Car>> {
-
+public class CarResourceAssembler implements RepresentationModelAssembler<Car, CarRepresentation> {
     @Override
-    public Resource<Car> toResource(Car car) {
-        return new Resource<>(car,
-                linkTo(methodOn(CarController.class).get(car.getId())).withSelfRel(),
-                linkTo(methodOn(CarController.class).list()).withRel("cars"));
-
+    public CarRepresentation toModel(Car entity) {
+        CarRepresentation carRepresentation = CarRepresentation.builder()
+                .id(entity.getId())
+                .createdAt(entity.getCreatedAt())
+                .modifiedAt(entity.getModifiedAt())
+                .condition(entity.getCondition())
+                .details(entity.getDetails())
+                .location(entity.getLocation())
+                .price(entity.getPrice())
+                .build();
+        carRepresentation.add(linkTo(methodOn(CarController.class).get(carRepresentation.getId())).withSelfRel());
+        carRepresentation.add(linkTo(methodOn(CarController.class).list()).withRel("cars"));
+        return carRepresentation;
+    }
+    @Override
+    public CollectionModel<CarRepresentation> toCollectionModel(Iterable<? extends Car> entities) {
+        CollectionModel<CarRepresentation> carRepresentations = RepresentationModelAssembler.super.toCollectionModel(entities);
+        carRepresentations.add(linkTo(methodOn(CarController.class).list()).withSelfRel());
+        return carRepresentations;
     }
 }
