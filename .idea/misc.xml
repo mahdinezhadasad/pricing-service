@@ -3,11 +3,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/P02-VehiclesAPI/boogle-maps/pom.xml" />
-        <option value="$PROJECT_DIR$/P02-VehiclesAPI/vehicles-api/pom.xml" />
-        <option value="$PROJECT_DIR$/P02-VehiclesAPI/pricing-service/pom.xml" />
+        <option value="$PROJECT_DIR$/boogle-maps/pom.xml" />
+        <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/vehicles-api/pom.xml" />
+        <option value="$PROJECT_DIR$/pricing-service/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15 (4)" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
 </project>
