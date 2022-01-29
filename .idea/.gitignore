@@ -1,8 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-# Datasource local storage ignored files
-/../../../../:\Udacity_Java_Entwikler\nd035-C2-Web-Services-and-APIs-Exercises-and-Project-Starter-master\.idea/dataSources/
-/dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
